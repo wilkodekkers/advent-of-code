@@ -1,43 +1,43 @@
 #!/usr/bin/python3
 """
-Fileinput module
+File input module
 """
 import fileinput
 
-DATA = []
-HORIZONTAL = 0
-DEPTH = 0
-AIM = 0
+data = []
+horizontal = 0
+depth = 0
+aim = 0
 
 # initialize data
 for line in fileinput.input():
     line = line.strip()
-    DATA.append(line)
+    data.append(line)
 
 # part 1
-for line in DATA:
+for line in data:
     parts = line.split(" ")
     if parts[0] == "forward":
-        HORIZONTAL += int(parts[1])
+        horizontal += int(parts[1])
     if parts[0] == "down":
-        DEPTH += int(parts[1])
+        depth += int(parts[1])
     if parts[0] == "up":
-        DEPTH -= int(parts[1])
+        depth -= int(parts[1])
 
-print(f"part 1: {HORIZONTAL * DEPTH}")
+print(f"part 1: {horizontal * depth}")
 
 # part 2
-HORIZONTAL = 0
-DEPTH = 0
+horizontal = 0
+depth = 0
 
-for line in DATA:
+for line in data:
     parts = line.split(" ")
     if parts[0] == "down":
-        AIM += int(parts[1])
+        aim += int(parts[1])
     if parts[0] == "up":
-        AIM -= int(parts[1])
+        aim -= int(parts[1])
     if parts[0] == "forward":
-        HORIZONTAL += int(parts[1])
-        DEPTH += AIM * int(parts[1])
+        horizontal += int(parts[1])
+        depth += aim * int(parts[1])
 
-print(f"part 2: {HORIZONTAL * DEPTH}")
+print(f"part 2: {horizontal * depth}")
