@@ -1,7 +1,5 @@
 from string import ascii_lowercase
 
-data = []
-
 with open("day5.txt") as file:
     data = [line.strip() for line in file.readlines()]
 
