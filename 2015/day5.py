@@ -36,8 +36,23 @@ def is_nice(string):
            contains_double_character(string)
 
 
+def contains_pair_of_two_letters(string):
+    for i in range(len(string) - 2):
+        if string[i + 2:].find(string[i] + string[i + 1]) != -1:
+            return True
+    return False
+
+
+def letter_repeats_one_letter_between(string):
+    for index in range(len(string) - 2):
+        if string[index] is string[index + 2]:
+            return True
+    return False
+
+
 def new_is_nice(string):
-    return 0
+    return contains_pair_of_two_letters(string) and \
+           letter_repeats_one_letter_between(string)
 
 
 def main():
