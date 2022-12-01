@@ -1,14 +1,24 @@
+"""Abstract Solution Class"""
+
 from abc import ABC, abstractmethod
 
 
 class Solution(ABC):
-    @abstractmethod
-    def part1(self) -> any:
-        """Returns the result of part 1"""
+    """Base class for defining Solution Classes"""
 
     @abstractmethod
-    def part2(self) -> any:
-        """Returns the result of part 2"""
+    def part1(self) -> int:
+        """Returns the result of part 1
+
+        Returns the result of this part
+        """
+
+    @abstractmethod
+    def part2(self) -> int:
+        """Returns the result of part 2
+
+        Returns the result of this part
+        """
 
     def run(self) -> None:
         """Prints the result of part 1 and part 2 to the console"""

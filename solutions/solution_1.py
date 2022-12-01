@@ -8,10 +8,10 @@ class Solution1(Solution):
             lines = [line.strip() for line in f.readlines()]
         self.fill_elf_list(lines)
 
-    def part1(self):
+    def part1(self) -> int:
         return max(self.elf_list)
 
-    def part2(self):
+    def part2(self) -> int:
         return sum(sorted(self.elf_list, reverse=True)[0:3])
 
     def fill_elf_list(self, lines: list[str]):
