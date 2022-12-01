@@ -1,14 +1,13 @@
 """Abstract Solution Class"""
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 
 
-@dataclass
 class Solution(ABC):
     """Base class for defining Solution Classes"""
 
-    lines: [] = field(default_factory=list)
+    def __init__(self):
+        self.lines = []
 
     @abstractmethod
     def part1(self) -> int:

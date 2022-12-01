@@ -1,11 +1,11 @@
-from dataclasses import dataclass, field
-
 from solutions import Solution
 
 
-@dataclass
 class Solution1(Solution):
-    elf_list: [] = field(default_factory=list)
+
+    def __init__(self):
+        super().__init__()
+        self.elf_list = []
 
     def load(self, path_to_input_file: str) -> "Solution":
         super().load(path_to_input_file)
