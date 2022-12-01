@@ -6,6 +6,9 @@ from abc import ABC, abstractmethod
 class Solution(ABC):
     """Base class for defining Solution Classes"""
 
+    def __init__(self, path_to_input: str):
+        self.lines = self.get_file_input(path_to_input)
+
     @abstractmethod
     def part1(self) -> int:
         """Returns the result of part 1
@@ -19,6 +22,11 @@ class Solution(ABC):
 
         Returns the result of this part
         """
+
+    @staticmethod
+    def get_file_input(path_to_input: str) -> list[str]:
+        with open(path_to_input) as f:
+            return [line.strip() for line in f.readlines()]
 
     def run(self) -> None:
         """Prints the result of part 1 and part 2 to the console"""
