@@ -1,16 +1,15 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
-from solutions import Solution
+from solutions.solution import Solution
 
 
 @dataclass
 class Solution1(Solution):
-    elf_list: [] = field(default_factory=list)
+    elf_list = []
 
-    def load(self, path_to_input_file: str) -> "Solution":
-        super().load(path_to_input_file)
+    def __init__(self, path_to_input: str):
+        super().__init__(path_to_input)
         self.fill_elf_list()
-        return self
 
     def part1(self) -> int:
         return max(self.elf_list)
