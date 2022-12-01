@@ -1,14 +1,17 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Solution(ABC):
-    def part1(self):
-        raise NotImplementedError()
+    @abstractmethod
+    def part1(self) -> any:
+        """Returns the result of part 1"""
 
-    def part2(self):
-        raise NotImplementedError()
+    @abstractmethod
+    def part2(self) -> any:
+        """Returns the result of part 2"""
 
-    def run(self):
+    def run(self) -> None:
+        """Prints the result of part 1 and part 2 to the console"""
         print("Solution")
         print(f"Part 1: {self.part1()}")
         print(f"Part 2: {self.part2()}")
