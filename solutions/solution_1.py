@@ -13,10 +13,10 @@ class Solution1(Solution):
         return self
 
     def part1(self) -> int:
-        return max(self.elf_list)
+        return self.elf_list[0]
 
     def part2(self) -> int:
-        return sum(sorted(self.elf_list, reverse=True)[0:3])
+        return sum(self.elf_list[:3])
 
     def fill_elf_list(self):
         elf = 0
@@ -26,3 +26,4 @@ class Solution1(Solution):
             else:
                 self.elf_list.append(elf)
                 elf = 0
+        self.elf_list.sort(reverse=True)
