@@ -1,8 +1,8 @@
-from solutions import Solution1
+from solutions import Solution2
 
 
 def main():
-    Solution1().load("solutions/inputs/day_1.txt").run()
+    Solution2().load("solutions/inputs/day_2.txt").run()
 
 
 if __name__ == "__main__":

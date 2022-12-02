@@ -7,7 +7,7 @@ class Solution(ABC):
     """Base class for defining Solution Classes"""
 
     def __init__(self):
-        self.lines = []
+        self.lines: list[str] = []
 
     @abstractmethod
     def part1(self) -> int:
