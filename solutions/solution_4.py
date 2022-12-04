@@ -26,18 +26,18 @@ class Solution4(Solution):
         ]
 
     @staticmethod
-    def sub_in_pair(pair) -> int:
+    def sub_in_pair(pair) -> bool:
         if pair[0][0] <= pair[1][0] and pair[0][1] >= pair[1][1]:
-            return 1
+            return True
         elif pair[0][0] >= pair[1][0] and pair[0][1] <= pair[1][1]:
-            return 1
-        return 0
+            return True
+        return False
 
     def part1(self) -> int:
-        return sum(list(map(self.sub_in_pair, self.elf_pairs)))
+        return sum(map(self.sub_in_pair, self.elf_pairs))
 
     def part2(self) -> int:
-        dif_list = list(map(self.calc_dif, self.elf_pairs))
+        dif_list = map(self.calc_dif, self.elf_pairs)
         solution = [
             [True, False, True, True],
             [True, False, True, False],
