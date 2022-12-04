@@ -44,4 +44,4 @@ class Solution4(Solution):
             [False, False, True, True],
             [False, False, True, False],
         ]
-        return sum(list([x in solution for x in dif_list]))
+        return sum(x in solution for x in dif_list)
