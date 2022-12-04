@@ -25,14 +25,16 @@ class Solution4(Solution):
             line[1][1] - line[0][1] > 0
         ]
 
+    @staticmethod
+    def sub_in_pair(pair) -> int:
+        if pair[0][0] <= pair[1][0] and pair[0][1] >= pair[1][1]:
+            return 1
+        elif pair[0][0] >= pair[1][0] and pair[0][1] <= pair[1][1]:
+            return 1
+        return 0
+
     def part1(self) -> int:
-        score = 0
-        for pair in self.elf_pairs:
-            if pair[0][0] <= pair[1][0] and pair[0][1] >= pair[1][1]:
-                score += 1
-            elif pair[0][0] >= pair[1][0] and pair[0][1] <= pair[1][1]:
-                score += 1
-        return score
+        return sum(list(map(self.sub_in_pair, self.elf_pairs)))
 
     def part2(self) -> int:
         dif_list = list(map(self.calc_dif, self.elf_pairs))
