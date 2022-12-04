@@ -44,8 +44,4 @@ class Solution4(Solution):
             [False, False, True, True],
             [False, False, True, False],
         ]
-        score = 0
-        for dif in dif_list:
-            if dif in solution:
-                score += 1
-        return score
+        return sum(list([x in solution for x in dif_list]))
